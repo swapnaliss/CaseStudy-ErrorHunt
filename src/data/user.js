@@ -1,4 +1,5 @@
-var users=[{
+// Part #1 point4 
+var user=[{
     "id":1,
     "uid":"aiswaryawalter@gmail.com",
     "pwd":"aiswarya"
