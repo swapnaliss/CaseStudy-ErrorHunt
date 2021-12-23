@@ -23,7 +23,7 @@ const nav= [
 
 const loginRouter = require('./src/routes/loginroute');
 const signupRouter = require('./src/routes/signuproute');
-const homeRouter = require('./src/routes/homeroute');
+const homeRouter = require('./src/routes/homerouter'); //Part #1 Point 3
 const booksRouter = require('./src/routes/booksroute');
 const authorsRouter = require('./src/routes/authorsroute');
 
