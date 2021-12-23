@@ -1,8 +1,7 @@
 {
   "name": "libraryexpress",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -16,5 +15,14 @@
     "start": "node app.js"
   },
   "author": "aiswarya",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swapnaliss/CaseStudy-ErrorHunt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/swapnaliss/CaseStudy-ErrorHunt/issues"
+  },
+  "homepage": "https://github.com/swapnaliss/CaseStudy-ErrorHunt#readme",
+  "description": ""
 }
