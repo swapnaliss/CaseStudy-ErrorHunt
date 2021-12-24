@@ -3,25 +3,6 @@ const path = require ('path');
 const cors = require('cors');
 var bodyParser = require('body-parser'); //Part #1 Point 2 
 
-const nav= [
-    {
-        link:"/books",
-        title:"Books"
-    },
-    {
-        link:"/authors",
-        title:"Authors"
-    },
-    {
-        link:"/addbook",
-        title:"Add Book"
-    },
-    {
-        link:"/addauthor",
-        title:"Add Author"
-    }
-]
-
 const loginRouter = require('./src/routes/loginroute');
 const signupRouter = require('./src/routes/signuproute');
 const homeRouter = require('./src/routes/homerouter'); //Part #1 Point 3
