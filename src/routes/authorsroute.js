@@ -65,15 +65,17 @@ authorsRouter.get('/:id',function(req,res){
 
 //router to delete author
 authorsRouter.post('/delete', function (req, res) {
-
-    const id = req.body.id;  
-
-    authordata.findOneAndDelete({ _id: id })
-        .then(function () {
-
-            res.redirect('/authors')
-
-        })  
+    const id = req.body.id;
+    authordata.findOneAndDelete({ _id: id }, //Part #2 Point 9
+        { useFindAndModify: false },
+        function (err, author) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log('Deleted : ' + author)
+                res.redirect('/authors')
+        }
+    }) 
 })
 
 
@@ -96,19 +98,21 @@ authorsRouter.post('/edit', function (req, res) {
 
 //router to update author
 authorsRouter.post('/update', function (req, res) {
-
-    authordata.findByIdAndUpdate(req.body.id, { $set: req.body }, function (err, data) {
-        if (err) {
-            res.json({ status: "Failed" });
-        }
-        else if (data.n == 0) {
-            res.json({ status: "No match Found" });
-        }
-        else {
-            res.redirect("/authors")
-        }
-
-    })  
+    authordata.findOne({ _id: req.body.id }) //Part #2 Point 9
+        .then(function (author) {
+            if (req.body.image != "")
+                author.image = req.body.image;
+            author.title = req.body.title;
+            author.about = req.body.about;
+            author.save(function (err) {
+                if (err) {
+                    res.json({ status: "Failed" });
+                }
+                else {
+                    res.redirect("/authors")
+                }
+            })
+        })
 })
 
 
